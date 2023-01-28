@@ -6,8 +6,3 @@
     grid-template-rows: repeat(16, 1fr);
     border: 3px solid black;
 }
-
-/* this is just to test if I made the 16x16 grid*/
-/*.square {
-    border: 1px solid black;
-}*/
