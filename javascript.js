@@ -8,3 +8,14 @@ function createDivs(numDivs){
 
 let rowCol = 16;
 createDivs(rowCol * rowCol);
+
+
+//change the color of divs on hover
+const allDivs = document.querySelectorAll('div.square');
+console.log(allDivs);
+allDivs.forEach(div => div.addEventListener('mouseover', onHover));
+
+function onHover(event){
+    event.target.style.backgroundColor = 'black';
+}
+
