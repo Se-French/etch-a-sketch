@@ -25,6 +25,8 @@ function getGrid(event){
         alert('You can\'t have a grid with no squares!');    
     } else if (number == undefined || number == null){
         alert('Please type a number!')
+    } else {
+        alert('Sorry, I don\'t think that\'s a number!')
     }
 
     //add style to make divs square
