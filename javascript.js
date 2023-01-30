@@ -4,6 +4,7 @@ function createDivs(numDivs){
         const square = document.createElement('div');
         square.classList.add('square');
         document.getElementById('container').appendChild(square);
+        square.style.backgroundColor = 'white';
     }
 }
 //button to get number of divs
@@ -22,7 +23,7 @@ function getGrid(event){
     } else if (number > 100){
         alert('Woah, take it easy! Please choose a number less than 100!');
     } else if (number <= 0){
-        alert('You can\'t have a grid with no squares!');    
+        alert('You can\'t sketch with no grid!');    
     } else if (number == undefined || number == null){
         alert('Please type a number!')
     } else {
