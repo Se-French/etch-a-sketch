@@ -38,8 +38,35 @@ function getGrid(event){
     const allDivs = document.querySelectorAll('div.square');
     allDivs.forEach(div => div.addEventListener('mouseover', onHover));
 
+    //changes color of divs to black
     function onHover(event){
         event.target.style.backgroundColor = 'black';
     }
 
+    //changes color of divs to random color after button click
+    const colorMode = document.getElementById('colorMode');
+    colorMode.addEventListener('click', newMouseOver);
+
+    function newMouseOver(event){
+        allDivs.forEach(div => div.addEventListener('mouseover', colorHover));
+    
+        function colorHover(event){
+            const randomBetween = (min, max) => min + Math.floor(Math.random() * (max - min + 1));
+            let r = randomBetween(0, 255);
+            let g = randomBetween (0, 255);
+            let b = randomBetween(0, 255);
+            let rgb = `rgb(${r}, ${g}, ${b})`;
+            event.target.style.backgroundColor = rgb;
+        }
+    }
+
+}
+
+//Erase the grid to start over
+const erase = document.getElementById('erase');
+erase.addEventListener('click', clearGrid);
+
+function clearGrid(event){
+    let divs = document.querySelectorAll('div.square')
+    divs.forEach(div => div.style.backgroundColor = 'white');
 }
