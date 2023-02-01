@@ -43,11 +43,24 @@ function getGrid(event){
         event.target.style.backgroundColor = 'black';
     }
 
+    //gradually changes divs to black
+    const darkenMode = document.getElementById('darkenMode');
+    darkenMode.addEventListener('click', darkenMouseOver);
+    
+    function darkenMouseOver(event){
+        allDivs.forEach(div => div.addEventListener('mouseover', darkenHover));
+
+        function darkenHover(event){
+            event.target.style.backgroundColor = 'black';
+            event.target.style.opacity -= '-0.1';
+        }
+    }
+
     //changes color of divs to random color after button click
     const colorMode = document.getElementById('colorMode');
-    colorMode.addEventListener('click', newMouseOver);
+    colorMode.addEventListener('click', colorMouseOver);
 
-    function newMouseOver(event){
+    function colorMouseOver(event){
         allDivs.forEach(div => div.addEventListener('mouseover', colorHover));
     
         function colorHover(event){
