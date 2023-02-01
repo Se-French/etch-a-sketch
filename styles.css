@@ -67,5 +67,10 @@ button:hover{
 
 button#colorMode {
     color: rgb(196, 41, 67);
-    margin-bottom: 45px;
+    margin-bottom: 15px;
+}
+
+button#darkenMode {
+    color: rgb(141, 137, 137);
+    margin-bottom: 15px;
 }
